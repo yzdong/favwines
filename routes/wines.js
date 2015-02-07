@@ -9,8 +9,6 @@ if(process.env.OPENSHIFT_MONGODB_DB_URL){
   mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL
 }
 
-// var winedb = new Db('winedb', server, {journal: true});
-
 var winedb
 
 MongoClient.connect(mongodb_connection_string, {db: {name: 'winedb', journal: true}}, function(err, db){
