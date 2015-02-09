@@ -1,7 +1,10 @@
 var express = require('express'),
-    wines = require('./routes/wines');
+    wines = require('./routes/wines'),
+    bodyParser = require('body-parser');
  
 var app = express();
+
+app.use(bodyParser.json());
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
